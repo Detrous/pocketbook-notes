@@ -1,0 +1,8 @@
+venv
+*.pyc
+.env
+test.py
+.env.local
+.env.remote
+.python-version
+docker-compose.yml

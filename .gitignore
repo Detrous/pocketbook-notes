@@ -1,0 +1,10 @@
+venv
+*.pyc
+.env
+testing
+test.py
+.env.local
+.env.remote
+.python-version
+pocketbook_data
+docker-compose.yml
