@@ -9,6 +9,7 @@ class BookSchema(BaseModel):
     title: str
     authors: Optional[str]
     added_at: datetime
+    notes_count: int
 
     class Config:
         orm_mode = True

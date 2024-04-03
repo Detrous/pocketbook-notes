@@ -32,8 +32,16 @@ const BaseLayout: FC<PropsWithChildren> = ({ children }) => {
             >
               Pocketbook Dictionary
             </Typography>
-
+            
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+              <Button
+                key={"Books"}
+                sx={{ my: 2, color: "white", display: "block" }}
+                component={Link}
+                to={"/books"}
+              >
+                Books
+              </Button>
               <Button
                 key={"Words"}
                 sx={{ my: 2, color: "white", display: "block" }}
