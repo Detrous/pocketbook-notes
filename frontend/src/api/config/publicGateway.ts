@@ -1,4 +1,4 @@
-import axios, { AxiosInstance } from 'axios';
+import axios, { AxiosInstance } from "axios";
 
 const publicGateway = (apiGateway: string): AxiosInstance => {
   const axiosInstance = axios.create({

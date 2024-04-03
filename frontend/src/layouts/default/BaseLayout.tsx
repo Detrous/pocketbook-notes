@@ -9,8 +9,6 @@ import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 
 const BaseLayout: FC<PropsWithChildren> = ({ children }) => {
-  const isWordsOpened = window.location.pathname === "/words";
-
   return (
     <Box>
       <AppBar position="static">
@@ -32,7 +30,7 @@ const BaseLayout: FC<PropsWithChildren> = ({ children }) => {
             >
               Pocketbook Dictionary
             </Typography>
-            
+
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               <Button
                 key={"Books"}

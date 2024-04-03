@@ -9,7 +9,7 @@ import { BookItem } from "../../api/endpoints/requests/requestAllBooks";
 const Words = () => {
   const [notes, setNotes] = useState<RequestAllNotesResult[]>([]);
   const [book, setBook] = useState<BookItem | null>(null);
-  const [notesQuery, setNotesQuery] = useState('');
+  const [notesQuery, setNotesQuery] = useState("");
   const [searchParams] = useSearchParams();
 
   useEffect(() => {
@@ -34,24 +34,28 @@ const Words = () => {
       } catch (error) {
         console.error("Failed to fetch documents count:", error);
       }
-    }
+    };
 
     fetchAllNotes();
 
     if (book_id != null) {
       fetchBookInfo();
     }
-  }, [notesQuery, searchParams ]);
+  }, [notesQuery, searchParams]);
 
-  const handleWordsSearch = (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+  const handleWordsSearch = (
+    event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>,
+  ) => {
     setNotesQuery(event.target.value);
-  }
+  };
 
   return (
     <Box>
       {book && (
         <Box sx={{ display: "flex", justifyContent: "center", mt: 3 }}>
-          <Typography sx={{ fontSize: 30 }}gutterBottom>{ book.title }</Typography>
+          <Typography sx={{ fontSize: 30 }} gutterBottom>
+            {book.title}
+          </Typography>
         </Box>
       )}
       <Box
@@ -62,9 +66,8 @@ const Words = () => {
           mt: 3,
         }}
       >
-        <Box sx={{mb: 4}}>
-
-      <Input placeholder="Search..." onChange={handleWordsSearch}/>
+        <Box sx={{ mb: 4 }}>
+          <Input placeholder="Search..." onChange={handleWordsSearch} />
         </Box>
         {notes.map((note) => (
           <NoteCard key={note.id} note={note} />

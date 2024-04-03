@@ -1,1 +1,1 @@
-export * from './publicGateway';
+export * from "./publicGateway";

@@ -1,1 +1,1 @@
-export { default } from './NoteCard';
+export { default } from "./NoteCard";

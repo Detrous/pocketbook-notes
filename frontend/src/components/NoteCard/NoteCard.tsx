@@ -5,31 +5,31 @@ import {
   Typography,
   Card,
   CardContent,
-  Accordion, AccordionSummary, AccordionDetails
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
 } from "@mui/material";
 
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 interface NoteCardProps {
   note: RequestAllNotesResult;
 }
 
 const NoteCard: FC<NoteCardProps> = ({ note }) => {
+  const [translationExpanded, setTranslationExpanded] = useState(false);
 
-    const [translationExpanded, setTranslationExpanded] = useState(false);
-
-  const handleTranslationAccordion = () => (event: React.SyntheticEvent, isExpanded: boolean) => {
-        setTranslationExpanded(isExpanded ? true : false);
+  const handleTranslationAccordion =
+    () => (event: React.SyntheticEvent, isExpanded: boolean) => {
+      setTranslationExpanded(isExpanded ? true : false);
     };
-
-
 
   return (
     <Box sx={{ mb: 2, width: 1 / 2.2 }}>
       <Card variant="outlined">
         <CardContent>
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-            { note.book_name }
+            {note.book_name}
           </Typography>
           <Typography variant="h5" component="div">
             {note.quote}
@@ -54,7 +54,9 @@ const NoteCard: FC<NoteCardProps> = ({ note }) => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              {note.translation ? note.translation.split('\n').map(str => <p>{str}</p>) : ''}
+              {note.translation
+                ? note.translation.split("\n").map((str) => <p>{str}</p>)
+                : ""}
             </Typography>
           </AccordionDetails>
         </Accordion>

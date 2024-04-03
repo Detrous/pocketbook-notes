@@ -1,11 +1,5 @@
 import { FC } from "react";
-import {
-  Box,
-  Typography,
-  Card,
-  CardContent,
-  Button,
-} from "@mui/material";
+import { Box, Typography, Card, CardContent, Button } from "@mui/material";
 
 import { BookItem } from "../../api/endpoints/requests/requestAllBooks";
 import { Link } from "react-router-dom";
@@ -28,10 +22,14 @@ const BookCard: FC<NoteCardProps> = ({ book }) => {
           <Typography sx={{ mb: 1.5 }} color="text.secondary">
             {book.authors}
           </Typography>
-          <Typography variant="body2">Notes: { book.notes_count }</Typography>
+          <Typography variant="body2">Notes: {book.notes_count}</Typography>
         </CardContent>
         <Box>
-          <Button key={"Words"} component={Link} to={`/words?book_id=${book.id}`}>
+          <Button
+            key={"Words"}
+            component={Link}
+            to={`/words?book_id=${book.id}`}
+          >
             View notes
           </Button>
         </Box>

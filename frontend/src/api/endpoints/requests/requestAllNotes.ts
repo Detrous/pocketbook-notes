@@ -11,14 +11,17 @@ export interface RequestAllNotesResult {
   added_at: string;
 }
 
-export const requestAllNotes = async (query: string, book_id: string | null): Promise<RequestAllNotesResult[]> => {
+export const requestAllNotes = async (
+  query: string,
+  book_id: string | null,
+): Promise<RequestAllNotesResult[]> => {
   var path = `/api/notes?query=${query}`;
   if (book_id != null) {
     path += `&book_id=${book_id}`;
   }
 
   const response = await publicGateway(
-    process.env.REACT_APP_API_HOST as string
+    process.env.REACT_APP_API_HOST as string,
   ).get(path);
 
   return response.data;

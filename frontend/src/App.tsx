@@ -1,12 +1,9 @@
-import { FC } from 'react';
+import { FC } from "react";
 
-
-import Router from './router/Router';
+import Router from "./router/Router";
 
 const App: FC = () => {
-  return (
-      <Router />
-  );
+  return <Router />;
 };
 
 export default App;

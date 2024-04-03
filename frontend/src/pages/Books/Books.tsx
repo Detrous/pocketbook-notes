@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
-import { BookItem, requestAllBooks } from "../../api/endpoints/requests/requestAllBooks";
-import { Box, Input } from "@mui/material";
+import {
+  BookItem,
+  requestAllBooks,
+} from "../../api/endpoints/requests/requestAllBooks";
+import { Box } from "@mui/material";
 import BookCard from "../../components/BookCard";
 
 const Books = () => {
@@ -20,8 +23,7 @@ const Books = () => {
   }, []);
 
   return (
-      <Box>
-
+    <Box>
       <Box
         sx={{
           flexDirection: "column",
@@ -30,9 +32,7 @@ const Books = () => {
           mt: 3,
         }}
       >
-        <Box sx={{mb: 4}}>
-
-      </Box>
+        <Box sx={{ mb: 4 }}></Box>
         {books.map((book) => (
           <BookCard key={book.id} book={book} />
         ))}
