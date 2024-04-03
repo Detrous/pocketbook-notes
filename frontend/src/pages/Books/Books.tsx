@@ -34,7 +34,7 @@ const Books = () => {
 
       </Box>
         {books.map((book) => (
-          <BookCard book={book} />
+          <BookCard key={book.id} book={book} />
         ))}
       </Box>
     </Box>

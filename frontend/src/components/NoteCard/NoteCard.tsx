@@ -5,9 +5,7 @@ import {
   Typography,
   Card,
   CardContent,
-  CardActions,
-  Button,
-  Accordion, AccordionActions, AccordionSummary, AccordionDetails
+  Accordion, AccordionSummary, AccordionDetails
 } from "@mui/material";
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';

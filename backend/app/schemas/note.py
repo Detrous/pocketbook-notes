@@ -5,6 +5,7 @@ from pydantic import BaseModel
 
 
 class NoteSchema(BaseModel):
+    id: int
     book_id: int
     quote: str
     book_name: str
