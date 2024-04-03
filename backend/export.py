@@ -12,7 +12,7 @@ with pb_db.session_scope() as pb_session:
     for book in pb_books:
         notes = []
 
-        for item in book.items[1:]:
+        for item in book.items:
             is_valid_note = False
             note = {"internal_id": item.oid}
 
@@ -31,6 +31,7 @@ with pb_db.session_scope() as pb_session:
                     note["translation"] = tag.value_dict.get("text")
             if is_valid_note:
                 notes.append(note)
+                print("New note:", note["quote"])
 
         if notes:
             books.append(
@@ -42,6 +43,7 @@ with pb_db.session_scope() as pb_session:
                     "notes": notes,
                 }
             )
+            print("New book:", book.title)
 
 with app_db.session_scope() as session:
     for pb_book in books:

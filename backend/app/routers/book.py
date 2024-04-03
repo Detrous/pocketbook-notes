@@ -5,7 +5,7 @@ from app.schemas.book import BookSchema
 from app.services.book import BookService
 from fastapi import APIRouter, status
 
-router = APIRouter(tags=["books"], prefix="/books")
+router = APIRouter(tags=["books"], prefix="/api/books")
 
 
 @router.get("", status_code=status.HTTP_200_OK, response_model=List[BookSchema])
