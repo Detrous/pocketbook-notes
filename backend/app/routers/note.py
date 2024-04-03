@@ -9,5 +9,5 @@ router = APIRouter(tags=["notes"], prefix="/api/notes")
 
 
 @router.get("", status_code=status.HTTP_200_OK, response_model=List[NoteSchema])
-async def get_books(query: str, service: NoteService = get_service(NoteService)):
+async def get_notes(query: str, service: NoteService = get_service(NoteService)):
     return service.get_notes(query)

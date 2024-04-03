@@ -18,3 +18,7 @@ class NoteModel(Base):
     translation = Column(String, nullable=True)
 
     added_at = Column(DateTime, nullable=False)
+
+    @property
+    def book_name(self):
+        return self.book.title

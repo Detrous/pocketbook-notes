@@ -31,7 +31,7 @@ const NoteCard: FC<NoteCardProps> = ({ note }) => {
       <Card variant="outlined">
         <CardContent>
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-            TBD
+            { note.book_name }
           </Typography>
           <Typography variant="h5" component="div">
             {note.quote}

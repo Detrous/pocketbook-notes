@@ -2,6 +2,7 @@ import { publicGateway } from "../../config";
 
 export interface RequestAllNotesResult {
   book_id: number;
+  book_name: string;
   quote: string;
   context: string;
   language: string;
